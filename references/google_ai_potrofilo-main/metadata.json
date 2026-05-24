@@ -1,0 +1,6 @@
+{
+  "name": "J.R. Olaño Portfolio",
+  "description": "Interactive, highly-polished modern redesign of J.R. Olaño's personal website featuring an AI Agent companion, project explorer, experience timeline, and a canvas spider-web background.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

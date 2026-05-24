@@ -18,87 +18,169 @@ export interface Experience {
   achievements: string[];
 }
 
+export interface Education {
+  id: string;
+  institution: string;
+  degree: string;
+  duration: string;
+  details: string[];
+}
+
+export interface SkillCategory {
+  category: string;
+  items: string[];
+}
+
 export interface PortfolioData {
   personalInfo: {
     name: string;
     title: string;
     bio: string;
     email: string;
+    phone?: string;
+    location?: string;
     github: string;
     linkedin: string;
   };
   projects: Project[];
   experience: Experience[];
+  education: Education[];
   skills: string[];
+  skillsGrouped?: SkillCategory[];
 }
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: "Olano",
-    title: "Software Engineer & AI Integration Specialist",
-    bio: "I build high-performance, agentic-driven web applications and scalable machine learning pipelines. Passionate about 3D data visualization, clinical AI diagnostics, and modern frontend architecture.",
-    email: "contact@example.com",
+    name: "John Robert L. Olaño",
+    title: "ASSOCIATE SOFTWARE ENGINEER | AI-ASSISTED BUILDER",
+    bio: "Highly adaptable Associate Software Engineer and AI-Assisted Builder in the final semester of a B.S. in Computer Science program. Specializes in building modern, AI-powered applications, successfully bridging the gap between traditional software engineering frameworks and next-generation artificial intelligence—including computer vision architectures like MobileNetV3 and EfficientNet-B0.",
+    email: "jrobertolano@gmail.com",
+    phone: "09983823017",
+    location: "Imus City (Open to Metro Manila)",
     github: "https://github.com/JohnRobert-Olano",
     linkedin: "https://linkedin.com/in/olano",
   },
   projects: [
     {
-      id: "optitrace",
-      title: "OptiTrace",
-      role: "Lead Developer & ML Architect",
-      duration: "2023 - Present",
-      description: "A comprehensive clinical eye disease diagnostic ecosystem leveraging advanced machine learning models deployed on mobile and managed via a robust web dashboard.",
+      id: "nova",
+      title: "Nova",
+      role: "Lead Backend Engineer",
+      duration: "June 2025",
+      description: "A learning management system with built-in messaging featuring a secure Node.js/Express API with JWT/RBAC, PostgreSQL data architecture managing exam grading and enrollment workflows, and real-time messaging powered by WebSockets (Socket.IO).",
       techStack: [
-        "Flutter",
         "React",
-        "Firebase",
-        "TensorFlow Lite",
-        "Python",
-        "Grad-CAM",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Socket.io",
+        "JWT",
+        "RBAC",
+        "SQL",
+        "AI Agent Prototyping",
       ],
       highlights: [
-        "Architected the OptiTrace Admin web dashboard with Firebase integration, strict role-based access control, and comprehensive analytics.",
-        "Engineered the machine learning pipeline utilizing MobileNetV3, EfficientNetB0, and NASNetMobile for accurate clinical eye disease detection.",
-        "Implemented TFLite conversion workflows and integrated Grad-CAM for model explainability on Flutter mobile applications.",
+        "Designed and built a scalable LMS application powered by a secure Node.js/Express REST API, featuring strict JWT authentication and role-based access control (RBAC) to support real-world organizational learning.",
+        "Built a scalable real-time messaging infrastructure utilizing Socket.IO, handling complex event states including message forwarding, reactions, soft deletes, and user notifications.",
+        "Engineered a PostgreSQL database optimized for heavy read/write operations, utilizing advanced SQL functions to manage multi-step enrollment approvals and complex exam grading logic.",
+        "Accelerated the development of a large-scale repository by utilizing AI tools to rapidly prototype complex React components, debug WebSocket payload inconsistencies, and streamline SQL database migrations.",
       ],
     },
     {
-      id: "nova",
-      title: "Nova",
-      role: "Frontend Architect",
-      duration: "2022 - 2023",
-      description: "A next-generation data visualization and interactive storytelling platform emphasizing smooth user experiences and high-performance WebGL rendering.",
-      techStack: ["Next.js", "Three.js", "GSAP", "Tailwind CSS"],
+      id: "optitrace",
+      title: "OptiTrace",
+      role: "Lead AI & Software Engineer",
+      duration: "May 2026",
+      description: "A comprehensive clinical eye disease diagnostic ecosystem leveraging Flutter for on-device ML classification (EfficientNetB0 and MobileNetV3) at 97.8% accuracy, native Grad-CAM explainability, and a Next.js admin analytics dashboard.",
+      techStack: [
+        "Flutter",
+        "Next.js",
+        "TypeScript",
+        "Python",
+        "EfficientNetB0",
+        "MobileNetV3",
+        "Grad-CAM",
+        "Recharts",
+        "Firebase",
+        "Gemini AI",
+      ],
       highlights: [
-        "Built immersive 3D scrollytelling experiences using React Three Fiber and GSAP ScrollTrigger.",
-        "Designed and implemented modern glassmorphism UI components to ensure an aesthetic and premium user experience.",
-        "Optimized WebGL performance for seamless rendering and dynamic state management across desktop and mobile devices.",
+        "Engineered a Flutter application for on-device eye disease classification (including Pterygium and Stye), achieving up to 97.8% accuracy utilizing fine-tuned EfficientNetB0 and MobileNetV3 architectures to facilitate accessible remote screening for patients.",
+        "Developed a custom dual-output architecture to bypass mobile tensor limitations, successfully rendering native Explainable AI (Grad-CAM) heatmaps directly on mobile CPUs for real-time diagnostic transparency.",
+        "Architected a secure Next.js and TypeScript admin dashboard, engineering a real-time data analytics engine using Recharts to turn screening data into actionable insights that drive smarter clinical decisions.",
+        "Leveraged AI coding agents to accelerate development across the Python ML pipeline, Dart frontend, and React backend, rapidly deploying complex features like serverless API routes and automated Nodemailer email systems.",
+        "Designed the end-to-end ecosystem to democratize eye care, providing patients with rapid, offline screening tools while equipping verified doctors with a secure platform to validate diagnoses and manage patient registries.",
       ],
     },
   ],
   experience: [
     {
-      id: "exp1",
-      company: "Independent Developer & Consultant",
-      role: "Full Stack Engineer",
-      duration: "2021 - Present",
-      description: "Developing custom solutions in AI diagnostics, global data visualization, and immersive web experiences.",
+      id: "ccf",
+      company: "Christ’s Commission Fellowship Alabang",
+      role: "Live Prod Volunteer",
+      duration: "June 2019 – May 2026",
+      description: "Assisted with technical support and visual systems, managing live audio systems and hardware troubleshooting for worship services and performances.",
       achievements: [
-        "Spearheaded the integration of 3D globes and geospatial scrollytelling using Three.js and GSAP for interactive financial data visualization.",
-        "Mentored and collaborated in agentic development workflows emphasizing strict typing and modular architecture.",
+        "Assisted with technical support for teachers and staff by troubleshooting laptops and devices before and during services.",
+        "Managed live audio systems for worship and performances, ensuring high-quality sound delivery throughout events.",
+        "Created and operated visual presentation slides, enhancing the visual experience of worship sessions and stage performances.",
+      ],
+    },
+  ],
+  education: [
+    {
+      id: "cvsu",
+      institution: "Cavite State University – Imus Campus",
+      degree: "B.S. in Computer Science",
+      duration: "Expected Graduation: 2026",
+      details: [
+        "GWA: 1.28 – 3rd Year, 2nd Semester",
+        "Senior Thesis: MobileNet Transfer Learning Approach in Classifying Common External Eye Diseases",
+        "Relevant Courses: Data Structures & Algorithms, Programming Languages, Discrete Mathematics, Web Development, Software Testing & Quality Assurance, Game Development, Linear Algebra, Probability & Statistics",
       ],
     },
   ],
   skills: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Three.js",
-    "GSAP",
-    "Firebase",
-    "TensorFlow",
-    "Flutter",
-    "Python",
+    "TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "SQL",
+    "Cursor", "Claude Code", "Google Antigravity", "Computer Vision", "Transfer Learning", "Explainable AI (Grad-CAM)", "MobileNetV3", "EfficientNetB0", "Gemini AI",
+    "React.js", "Next.js", "Flutter", "Tailwind CSS", "HTML/CSS",
+    "Git", "Power BI", "Windows Troubleshooting", "Basic Network Setup", "System Maintenance",
+    "Node.js", "Express.js", "RESTful APIs", "WebSockets (Socket.io)", "JWT Authentication",
+    "PostgreSQL", "Firebase (Firestore, Auth, Storage)", "SQLite",
+    "Multer", "MVC Architecture", "Role-Based Access Control (RBAC)", "System Migration",
+    "Problem-Solving under Pressure", "Agile Adaptability", "Cross-functional Leadership", "Technical Debugging"
   ],
+  skillsGrouped: [
+    {
+      category: "Programming Languages",
+      items: ["TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "SQL"]
+    },
+    {
+      category: "AI & Agentic Engineering",
+      items: ["Cursor", "Claude Code", "Google Antigravity", "Computer Vision", "Transfer Learning", "Explainable AI (Grad-CAM)", "MobileNetV3", "EfficientNetB0", "Gemini AI"]
+    },
+    {
+      category: "Frontend & Mobile",
+      items: ["React.js", "Next.js", "Flutter", "Tailwind CSS", "HTML/CSS"]
+    },
+    {
+      category: "Backend & APIs",
+      items: ["Node.js", "Express.js", "RESTful APIs", "WebSockets (Socket.io)", "JWT Authentication"]
+    },
+    {
+      category: "Databases & Cloud",
+      items: ["PostgreSQL", "Firebase (Firestore, Auth, Storage)", "SQLite"]
+    },
+    {
+      category: "IT & Support Tools",
+      items: ["Git", "Power BI (Data Analysis, Report Automation)", "Windows Troubleshooting", "Basic Network Setup", "System Maintenance"]
+    },
+    {
+      category: "Tools & Architecture",
+      items: ["Multer", "MVC Architecture", "Role-Based Access Control (RBAC)", "System Migration"]
+    },
+    {
+      category: "Soft Skills",
+      items: ["Problem-Solving under Pressure", "Agile Adaptability", "Cross-functional Leadership", "Technical Debugging"]
+    }
+  ]
 };

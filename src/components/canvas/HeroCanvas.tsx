@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Environment } from "@react-three/drei";
 import * as THREE from "three";
+import { Model } from "./Model";
 
 function SpatialBlob() {
   const groupRef = useRef<THREE.Group>(null);
@@ -62,11 +63,11 @@ export default function HeroCanvas() {
     <div className="fixed inset-0 -z-10 w-full h-full bg-transparent">
       <Canvas camera={{ position: [0, 0, 7], fov: 45 }}>
         {/* Soft, cool-toned lighting */}
-        <ambientLight intensity={0.5} color="#8ab4f8" />
-        <directionalLight position={[10, 10, 5]} intensity={2} color="#a0c4ff" />
-        <directionalLight position={[-10, -10, -5]} intensity={0.8} color="#e2e8f0" />
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
+        <directionalLight position={[-10, -10, -5]} intensity={1} color="#ffffff" />
         
-        <SpatialBlob />
+        <Model position={[0, -1, 0]} scale={1.5} />
         
         {/* Environment map to provide the bright highlights for the glass edges */}
         <Environment preset="city" />
